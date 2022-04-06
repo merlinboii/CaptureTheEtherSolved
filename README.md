@@ -1,4 +1,4 @@
-# capture-the-ether
+# capture_the_ether
 
 ```script
 # run locally
