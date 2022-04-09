@@ -1,8 +1,6 @@
 import crypto from "crypto";
 import { ethers } from "hardhat";
 import { BigNumber, Contract, Signer } from "ethers";
-import { expect } from "chai";
-import { formatEtherscanTx } from "../utils/format";
 
 let accounts: Signer[];
 let eoa: Signer;
