@@ -1,4 +1,6 @@
-# capture the ether
+# Capture The Ether 🚩
+
+![MY CAPTURE THE ETHER SCORE](./SCORE.png)
 
 All of my solutions use both of Remix and Hardhat to solving.
 
