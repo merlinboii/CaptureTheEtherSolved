@@ -32,6 +32,7 @@ const config: HardhatUserConfig = {
   networks: {
     ropsten: {
       url: ARCHIVE_URL,
+      gas: 6000000,
       accounts,
     },
     hardhat: {
